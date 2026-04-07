@@ -1,6 +1,6 @@
 # Projet Telco Customer Churn
 
-## 🎯 Vision du Projet
+## Objectif du projet
 L'objectif de ce projet est de transformer une analyse de données historique en un outil d'anticipation stratégique. Au lieu de simplement constater le départ des clients, nous avons mis en place un système capable de prédire **qui va partir demain et pourquoi**, permettant ainsi des interventions marketing ciblées et rentables.
 
 **Dataset :** Telco Customer Churn (Données comportementales de télécoms).  
@@ -8,7 +8,7 @@ L'objectif de ce projet est de transformer une analyse de données historique en
 
 ---
 
-## 🔍 1. Analyse Exploratoire des Données (EDA)
+##  1. Analyse Exploratoire des Données (EDA)
 L'analyse a révélé des points de friction majeurs dans le parcours client.
 
 ### Distribution du Churn
@@ -28,8 +28,8 @@ Le dataset présente un déséquilibre avec environ **26.5% de churn**.
 
 ---
 
-## 🛠️ 2. Data Engineering & Preprocessing
-Pour améliorer la précision du modèle, nous avons créé des variables "Expert" :
+##  2. Data Engineering & Preprocessing
+Pour améliorer la précision du modèle, nous avons créé ces variables  :
 - **TotalServices :** Somme des options souscrites (indicateur de dépendance à l'écosystème).
 - **ChargePerMonth_Ratio :** Détection des anomalies de facturation historique.
 - **IsFiber :** Isolation du segment à haut risque.
@@ -38,7 +38,7 @@ Le pipeline utilise un `ColumnTransformer` pour normaliser les données numériq
 
 ---
 
-## � 3. Modélisation et Performance
+##  3. Modélisation et Performance
 Nous avons opté pour un modèle **XGBoost** optimisé par recherche aléatoire d'hyperparamètres, avec une gestion stricte du déséquilibre des classes.
 
 ### Résultats de l'Optimisation :
@@ -55,7 +55,7 @@ Nous avons opté pour un modèle **XGBoost** optimisé par recherche aléatoire 
 
 ---
 
-## 🧠 4. Analyse d'Interprétabilité (SHAP)
+##  4. Analyse d'Interprétabilité (SHAP)
 L'utilisation de **SHAP** permet de justifier chaque prédiction auprès des équipes métier :
 - **Contrat Month-to-month :** Facteur n°1 de risque.
 - **Tenure :** Plus elle est faible, plus l'impact sur le churn est positif.
@@ -63,7 +63,7 @@ L'utilisation de **SHAP** permet de justifier chaque prédiction auprès des éq
 
 ---
 
-## 💰 5. Simulateur d'Impact Business
+##  5. Simulateur d'Impact Business
 Le modèle ne se contente pas de prédire, il aide à décider. Notre simulateur de ROI permet de définir le seuil d'intervention optimal.
 
 **Résultats de la Simulation :**
@@ -74,7 +74,7 @@ En réglant le modèle sur un seuil de **0.47** :
 
 ---
 
-## 💡 Recommandations Stratégiques
+##  Recommandations Stratégiques
 1.  **Migration de Contrat :** Inciter agressivement les clients "Month-to-month" à passer sur des contrats d'un an via des remises ciblées sur les 3 premiers mois.
 2.  **Focus Fibre Optique :** Offrir le "Tech Support" gratuitement pendant 6 mois pour tout nouvel abonnement fibre afin de stabiliser la base client.
 3.  **Onboarding Critique :** Déclencher une campagne de "Customer Success" automatique pour tous les clients ayant une tenure < 6 mois et des factures > 70$.
